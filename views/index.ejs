@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="/css/index.css">
+    
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm" onsubmit="validateForm(); return false;">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <p class="error" id="error-message"></p>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            var errorMessage = document.getElementById('error-message');
+
+            // Basic validation
+            if (username === '' || password === '') {
+                errorMessage.textContent = 'Both username and password are required.';
+            } else {
+                // You can add more advanced validation or send data to the server for authentication here
+                // For simplicity, let's consider it as a successful login
+                alert('Login successful!');
+                // You can redirect the user to another page or perform other actions after successful login
+            }
+        }
+    </script>
+</body>
+</html>
